@@ -1,8 +1,8 @@
 import sys
 if sys.version_info.major != 3: raise Exception('ktrain requires Python 3')
-tf_version_str = 'tensorflow==2.1.0'
+tf_version_str = 'tensorflow-cpu==2.1.0'
 if sys.version_info.minor == 8:
-    tf_version_str = 'tensorflow>=2.2.0'
+    tf_version_str = 'tensorflow-cpu>=2.2.0'
 
 from distutils.core import setup
 import setuptools
@@ -54,7 +54,8 @@ setup(
           # 'shap',  # used by TabularPredictor.explain
           #'eli5 >= 0.10.0', # forked version used by TextPredictor.explain and ImagePredictor.explain
           #'stellargraph>=0.8.2', # forked version used by graph module
-          #'allennlp', # required for Elmo embeddings since TF2 TF_HUB does not work
+          #'allennlp', # required for Elmo embeddings since TF2 TF_HUB does not work,
+          'tqdm>=4.29.1',
       ],
   classifiers=[  # Optional
     # How mature is this project? Common values are
